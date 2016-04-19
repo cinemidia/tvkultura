@@ -1,0 +1,14 @@
+<div id="most-seen">
+	<div ng-repeat="video in vm.videoList | limitTo:12 | orderBy:'-viewCount'"
+	 ng-if="video.categoria!='live'" class="most-seen">
+		
+		<div class="most-seen-image" ng-click="vm.setVideo($index) ">
+			<img width="130" height="77.8px" src="assets/media/images/{{video.low}}">
+		</div>
+		
+		<div class="most-seen-text">
+			<div class="title">{{video.title}}</div>
+			<div >{{video.logline}}</div>
+		</div>
+	</div>
+</div>

@@ -1,0 +1,117 @@
+<div id="video-form" >
+	<h1 >{{vm.dialogTitle}}</h1>	
+	<form enctype='multipart/form-data'>
+	      <div class="record">
+			<span  class="label">ID</span>
+			<input id="v_id" type="text" ng-model="vm.selectVideo.video_id" />
+		</div>
+		<div class="record">
+			<span class="label">título</span>
+			<input type="text" ng-model="vm.selectVideo.title" />
+		</div>
+		<div class="record">
+			<span class="label">Categoria</span>
+            <select  ng-model="vm.selectVideo.category">
+             <option disabled selected value> -- seleciona uma categoria -- </option>
+              <option value ="live">Live</option>
+	         <option value ="web serie">Web Serie</option> 
+	         <option value="video clip">Video Clip</option> 
+	         <option value="filme">Filme</option> 
+	         <option value="reportagen">Reportagen</option> 
+	      </select>
+      </div>
+		<div class="record" ng-show="hide_duration">
+			<span class="label">duracao</span>
+			<input  type="time" ng-model="vm.selectVideo.duration" />
+		</div>
+		<div class="record">
+			<span class="label">logline</span>
+			<input type="text" ng-model="vm.selectVideo.logline" />
+		</div>
+		<div class="record">
+			<span class="label">sinopse</span>
+			<textarea name="comments" ng-model="vm.selectVideo.synopsis" ></textarea>
+		</div>
+		<div class="record">
+			<span style="color: #000; font-weight: bold">Não Alterar imagens </span> 
+			<input id="alt_img" type="checkbox" value='1' ng-click="vm.img_alt()" >
+		</div>
+	  	
+	 <div id="panel_image" style="width: 100%; border: 1px solid #000" >
+		<div class="record">
+			<span class="label">low</span>
+			<input id="img_low" type="file" accept="image/jpg, image/jpeg, image/png"/>
+		</div>
+		<div class="record">
+			<span class="label">medium</span>
+			<input id="img_medium" type="file" accept="image/jpg, image/jpeg, image/png" />
+		</div>
+		<div class="record">
+			<span class="label">high</span>
+			<input id="img_high" type="file" accept="image/jpg, image/jpeg, image/png" />
+		</div>
+		<div class="record">
+			<span class="label">maxres</span>
+			<input id="img_maxres" type="file" accept="image/jpg, image/jpeg, image/png"/>
+		</div>
+	  </div>
+		<div class="record">
+			<span class="label">Publico</span>
+			<select  ng-model="vm.selectVideo.publico">
+             <option disabled selected value> -- seleciona uma Opção -- </option>
+	         <option value ="1">Sim</option> 
+	         <option value="0">Não</option> 	          
+	      </select>
+		</div>
+		<br>
+		
+		<!--<div class="section">
+			<div class="title"> 
+				<button>+</button><button>-</button>
+				<div>Fontes</div>
+			</div>
+			<div class="header">
+				<span class="label table">título</span>
+			</div>
+			<div class="record" ng-repeat="source in vm.selectVideo.sources">
+				<input class="table" type="text" ng-model="source.src" />
+			</div>
+		</div>	
+		
+		<div class="section">
+			<div class="title">
+				<button>+</button><button>-</button>
+				<div>Legendas</div>
+			</div>
+			<div class="header">
+				<span class="label table">título</span>
+				<span class="label table">língua</span>
+				<span class="label table">ficheiro</span>
+			</div>
+			<div class="record" ng-repeat="track in vm.selectVideo.tracks">
+				<input class="table" type="text" ng-model="track.src" />
+				<input class="table" type="text" ng-model="track.lang" />
+				<input class="table" type="text" ng-model="track.title" />
+			</div>
+		</div>
+		
+		<div class="section">
+			<div class="title">
+				<button>+</button><button>-</button>
+				<div>Créditos</div>
+			</div>
+			<div class="header">
+				<div class="label table">nome</div>
+				<div class="label table">função</div>
+			</div>
+			<div class="record" ng-repeat="credit in vm.selectVideo.credits">
+				<input class="table" type="text" ng-model="credit.name" />
+				<input class="table" type="text" ng-model="credit.job" />
+			</div>
+		</div>-->
+		
+		<br>
+		<button value="{{vm.dialogActionLabel}}"  ng-click="vm.editVideo(vm.dialogAction, vm.ngDialogData.index)">{{vm.dialogActionLabel}}</button>
+	</form>
+	<div id="operationMsg" class="{{msgClass}}">{{vm.dbMsg}}&nbsp;</div>
+</div>

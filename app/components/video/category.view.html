@@ -1,0 +1,15 @@
+<img src="assets/media/images/{{ vm.c_titulo}}.png"/>
+<div id="most-seen">
+	<div ng-repeat="video in vm.videoList" class="single_category">
+		
+		<div class="s_cat_img" ui-sref="video({action:'{{video.videoId}}'})">
+			<img width="95%" height="77.8px" src="assets/media/images/{{video.medium}}">
+		</div>
+		
+		<div class="s_cat_text">
+			<div class="s_cat_title">{{video.title}}</div>
+			<div class="s_cat_metas">{{video.datas}} | {{video.duration}}</div>
+			<div >{{video.logline}}</div>
+		</div>
+	</div>
+</div>

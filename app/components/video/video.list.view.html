@@ -1,0 +1,38 @@
+﻿<input type="text" placeholder="Pesquisar video..." style="float: right" ng-model="linha" />	
+<h1>Admin</h1>	
+<table>
+	<tr>
+		<td width="180px">título</td>
+		<td width="200px">Categoria</td>
+		<td width="200px">logline</td>
+		<td width="240px">sinopse</td>
+		<td width="80px">modificar</td>
+		<td width="80px">apagar</td>
+	</tr>
+	<tr ng-repeat="video in vm.videos | filter:linha ">
+		<td>{{ video.title }}</td>
+		<td>{{ video.category }}</td>
+		<td>{{ video.logline }}</td>
+		<td>{{ video.synopsis }}</td>
+		<td><a ui-sref="videos" ng-click="vm.openVideoDetails($index,'update') && closeThisDialog('close')">modificar</a></td>
+		<td><a ui-sref="videos" ng-click="vm.editVideo('delete', $index)">apagar</a></td>
+	</tr>
+</table>
+<br>
+<div style="float: right"><a ui-sref="register" class="btn btn-link">Register</a></div>
+<div><a ui-sref="videos" ng-click="vm.openVideoDetails($index,'add')">adicionar</a></div>
+<br/>
+
+	<div id="live-opcao"><h4 style="text-align: center">Live</h4>
+	    <input type="radio" name="op" ng-click="vm.live_op('2')" ng-checked="ckT"> Tudo<br>
+	    <input type="radio" name="op" ng-click="vm.live_op('1')" ng-checked="ckTV"> TVkultura<br>
+	    <input type="radio" name="op" ng-click="vm.live_op('0')" ng-checked="ckIp">  iPercentro<br>
+	    <input ind="live_radio" value="1" type="radio" name="op" ng-click="vm.live_op('-1')" ng-checked="ckN">  Nenhum
+	 </div>
+	 <div class="style=border:1px solid #000">
+	 	<input type="datetime-local" placeholder="proxima trasmissão.." id="data_trans"/>
+	 	<button id="data_bt" ng-click="vm.postTransmissao()" >OK</button><br>
+	 	<textarea id="texto_info"></textarea>
+	 	<button id="data_bt" ng-click="vm.postTransmissaoInfo()" >OK</button>
+	 </div>
+

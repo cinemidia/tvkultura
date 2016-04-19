@@ -1,0 +1,110 @@
+.box {
+  margin: 20px auto;
+  background: #5FCF80;
+  width: 150px;
+  height: 150px;
+}
+.circle {
+  transform: rotate(360deg);
+  background: #9351A6;
+  border-radius: 50%;
+  margin: 20px auto;
+  width: 150px;
+  height: 150px;
+}
+.box:hover {
+  transform: rotate(360deg);
+  background: #9351A6;
+  border-radius: 50%;
+}
+.rotate {
+  transition: all 0.1s ease-in-out;
+}
+.rotate:hover {
+  transition: all 0.1s ease-in-out;
+}
+
+
+
+
+.repeated-item {
+	background-color:cyan;
+	padding:4px;
+}
+/*
+  We're using CSS transitions for when
+  the enter and move events are triggered
+  for the element that has the .repeated-item
+  class
+*/
+.repeated-item.ng-enter {
+  -webkit-transition:0.5s linear all;
+  -moz-transition:0.5s linear all;
+  -o-transition:0.5s linear all;
+  transition:0.5s linear all;
+  opacity:0;
+}
+
+/*
+ The ng-enter-active and ng-move-active
+ are where the transition destination properties
+ are set so that the animation knows what to
+ animate.
+*/
+.repeated-item.ng-enter.ng-enter-active,
+.repeated-item.ng-move.ng-move-active {
+  opacity:1;
+}
+
+/*
+  We're using CSS keyframe animations for when
+  the leave event is triggered for the element
+  that has the .repeated-item class
+*/
+.repeated-item.ng-leave {
+  -webkit-animation:0.5s my_animation;
+  -moz-animation:0.5s my_animation;
+  -o-animation:0.5s my_animation;
+  animation:0.5s my_animation;
+}
+
+
+#main-content.ng-enter {
+	-webkit-transition:0.5s linear all;
+	-moz-transition:0.5s linear all;
+	-o-transition:0.5s linear all;
+	transition:0.5s linear all;
+	opacity:0;
+}
+#main-content.ng-enter.ng-enter-active {
+	-webkit-transition:0.5s linear all;
+	-moz-transition:0.5s linear all;
+	-o-transition:0.5s linear all;
+	transition:0.5s linear all;
+	opacity:1;
+}
+
+
+@keyframes my_animation {
+  from { opacity:1; }
+  to { opacity:0; }
+}
+
+/*
+  Unfortunately each browser vendor requires
+  its own definition of keyframe animation code...
+*/
+@-webkit-keyframes my_animation {
+  from { opacity:1; }
+  to { opacity:0; }
+}
+
+@-moz-keyframes my_animation {
+  from { opacity:1; }
+  to { opacity:0; }
+}
+
+@-o-keyframes my_animation {
+  from { opacity:1; }
+  to { opacity:0; }
+}

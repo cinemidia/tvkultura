@@ -1,0 +1,20 @@
+<h3 >Transmissões Disponiveis:</h3>
+<div id="live-content">
+	<div ng-show="live_tv" class="live-one" ui-sref="video({action:'ltvk'})" >		
+		<div class="s_live_img">
+		  <a><img width="50px" height="50px" src="assets/media/images/tvkultura.png"></a>
+		</div>		
+		<div class="s_live_text">
+		 <a><div class="live-title">TVKultura: {{vm.title_tv}}</div></a>
+		</div>
+	</div>
+	<div ng-show="live_ip" class="live-one" ui-sref="video({action:'{{vm.video_id_ip}}'})" >		
+		<div class="s_live_img" >
+			<img width="50px" height="50px" src="assets/media/images/ipercentro.png">
+		</div>
+		
+		<div class="s_live_text">
+			<div class="live-title">iPericentro: {{vm.title_ip}}</div>
+		</div>
+	</div>
+</div>

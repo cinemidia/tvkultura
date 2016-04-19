@@ -1,0 +1,19 @@
+videogular vg-cuepoints {
+	position: relative;
+
+	display: block;
+	width: 100%;
+	height: 0px;
+}
+
+videogular vg-cuepoints vg-cuepoint {
+	position: absolute;
+	top: -16px;
+
+	display: block;
+	width: 10px;
+	height: 30px;
+
+	/* background-color: red; */
+	background-image: url('../media/icons/red-bullet.png')
+}

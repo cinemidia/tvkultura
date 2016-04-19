@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html> 
+<head>
+    <title>TV Kultura</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="assets/css/login.css">
+	<link rel="stylesheet" href="assets/css/site.css">
+	<link rel="stylesheet" href="assets/css/video.css">	
+	<link rel="stylesheet" href="assets/css/animation.css">
+	<link rel="stylesheet" href="assets/css/cuepoints.css">
+	<link rel="stylesheet" href="assets/css/ngDialog.css">
+	<link rel="stylesheet" href="assets/css/ngDialog-theme-default.css">
+     <link rel="shortcut icon" href="tvkultura.ico" />
+
+</head>
+
+<body ng-app="app" >
+
+<div id="header-wrapper">
+	<header id="tools-header" ng-show="false">
+		<div></div>
+		<div></div>
+	</header>
+	<header id="menu-header">
+		<div class="left-wing">
+			<div id="logomc"><a ui-sref="home"><img src="assets/media/images/tvkultura.png"></a></div>
+		</div>
+		<div class="right-wing">
+		<div id="logout" style="padding-top: 15px">
+			 <a ng-show="ver_logout" ui-sref="login({action:'logout'})" style="text-decoration: none"> :Logout</a>
+		 <span ng-show="ver_logout" >{{userLogged}}</span>
+		</div>		 
+		
+		<div class="social-share">
+			<!--<span class="button" >contact</span>-->
+			<div class="button" 
+				socialshare 
+				socialshare-provider="facebook" 
+				socialshare-media="assets/media/images/icona/facebook.png"
+				socialshare-type="sharer"
+				socialshare-text="TV Kultura"
+				socialshare-url="www.tvkultura.cv"
+				socialshare-popup-height="300"
+				socialshare-popup-width="400"
+				socialshare-trigger="click"> <img src="assets/media/images/icons/facebook.png" title="Partilha no Facebook">
+			</div>
+			<div class="button" 
+				socialshare
+				socialshare-provider="twitter"
+				socialshare-hashtags="urbanism, development, social, webdoc"
+				socialshare-via="twitter"
+				socialshare-text="TV Kultura"
+				socialshare-url="www.tvkultura.cv"
+				socialshare-popup-height="300"
+				socialshare-popup-width="400"
+				socialshare-trigger="click"><img src="assets/media/images/icons/twitter.png" title="Partilha no Twitter">				
+			</div>
+			<div ng-show="live_ico"><img src="assets/media/images/live.gif" ui-sref="live">
+			</div>
+			<p style="padding-right: 5px" ng-show="live_text" class="aviso">{{aviso_texto}}</p>
+	
+
+		</div>
+       </div>
+
+        <div style="clear:both"></div>
+         <div class="Navbar">
+           <div id="menu-top">
+		   <button id='btn_menu' ><img src="assets/media/images/menu.png"></button>	         
+		  </div>
+         <main-menu></main-menu> 
+        </div>
+       
+	</header>
+</div>
+
+<div id="body-wrapper">	
+	<div id="main-content" ui-view="body"></div> 
+</div> 
+
+<!--<div id="footer-wrapper" ng-hide="true">
+	<div id="footer" >
+		<div id="footer-section">
+			<div class="title">:PARCEIROS</div>
+			<div class="logo"><img src="assets/media/images/logomc.png"></div>
+			
+		</div>
+		<div id="footer-section">
+			<div class="title">:REDES SOCIAIS</div>
+			<div class="social"><img src="assets/media/images/facebook.png">/tvcultura</div>
+			<div class="social"><img src="assets/media/images/youtube.png">/tvcultura</div>
+		</div>
+		<div id="footer-section">
+			<div class="title">:equipa</div>
+			<ul>
+				<li>Direção:</li>
+				<li>Conteúdos:</li>
+				<li>Câmara e Iluminação:</li>
+				<li>Edição:</li>
+				<li>Webmaster:</li>
+			</ul>
+			<br>
+			<div id="admin">
+			<a href="#/videos" ng-show="ver_admin">:ADMIN</a>
+
+			 <a ng-show="ver_logout" ui-sref="login({action:'logout'})">{{userLogged}}:LOGOUT</a>		    
+		    </div>
+		</div>
+	</div>
+	
+  </div>-->
+ <footer id="footer-notes">
+	<div>copyleft: Ministério da Cultura de Cabo Verde</div>
+</footer>
+
+<!-- <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-68801827-1', 'auto');
+</script> -->
+
+<script src="assets/lib/angular/angular.min.js"></script>
+<script src="assets/lib/angular-sanitize/angular-sanitize.min.js"></script>
+<script src="assets/lib/angular-animate/angular-animate.js"></script>
+<script src="assets/lib/angular-ui-router.min.js"></script>
+<script src="assets/lib/videogular/videogular.js"></script>
+<script src="assets/lib/videogular-controls/vg-controls.js"></script>
+<script src="assets/lib/videogular-overlay-play/vg-overlay-play.js"></script>
+<script src="assets/lib/videogular-poster/vg-poster.js"></script>
+<script src="assets/lib/videogular-buffering/vg-buffering.js"></script>
+<script src="assets/lib/bower-videogular-youtube/youtube.js"></script>
+<script src="assets/lib/ng-dialog/ngDialog.min.js"></script>
+<script src="assets/lib/bower-angular-route-master/angular-route.min.js"></script>
+<script src="assets/lib/bower-angular-cookies-master/angular-cookies.min.js"></script>
+<script src="assets/lib/angular-socialshare/angular-socialshare.min.js"></script>
+<script src="assets/lib/jquery/dist/jquery.min.js"></script>
+<script src="assets/lib/cuepoints/cuepoints.js"></script>
+<script src="assets/lib/moment/moment.js"></script>
+<script src="assets/js/WM_slideToggle.js"></script>
+
+<script src="app/app.module.js"></script>
+<script src="app/app.routes.js"></script>
+<script src="app/components/menu/menu.directive.js"></script>
+<script src="app/components/video/video.player.controller.js"></script>
+<script src="app/components/video/video.list.controller.js"></script>
+<script src="app/components/video/toplist.directive.js"></script>
+<script src="app/components/login/authentication.service.js"></script>
+<script src="app/components/login/flash.service.js"></script>
+<script src="app/components/login/user.service.local-storage.js"></script>
+<script src="app/components/login/login.controller.js"></script>
+<!-- Real user service that uses an api -->
+<!-- <script src="app-services/user.service.js"></script> -->
+<script src="app/components/meta/meta.directive.js"></script>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-76308235-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,15 @@
+<div>
+
+	<h1>Repeating</h1>
+	<div ng-repeat="test in vm.testList" class='repeated-item'>{{test.text}}</div>
+	<span ng-click="vm.addItem()">acrescentar</span>&nbsp;|&nbsp;
+	<span ng-click="vm.removeItem(0)">remover</span>
+	<br>
+</div>
+
+<div>
+  <div class="container">
+    <input type="checkbox" ng-model="vm.boxClass" />
+    <div class="box rotate" ng-class="{'box': vm.boxClass, 'circle': !vm.boxClass}"></div>
+  </div>
+</div>

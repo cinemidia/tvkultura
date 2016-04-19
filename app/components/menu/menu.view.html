@@ -1,0 +1,12 @@
+<nav id="main-menu">        
+	<ul>	     
+	<li><a ui-sref="home">:HOME</a></li>
+        <li><a ui-sref="category({action:'s'})" ng-hide="true">:webséries</a></li>
+        <li><a ui-sref="category({action:'c'})">:video clips</a></li>
+        <li><a ui-sref="category({action:'f'})" >:filmes</a></li>
+         <li><a ui-sref="category({action:'r'})">:reportagens</a></li>
+         <li><a ui-sref="sobre">:SOBRE</a></li>
+        <li class="admin_menu"><a ui-sref="login" ng-show="lg">:ADMIN</a></li>
+	<li class="admin_menu"><a ui-sref="videos" ng-show="ad">:ADMIN</a></li>  
+	</ul>
+</nav>

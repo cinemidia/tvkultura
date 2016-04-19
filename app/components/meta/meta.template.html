@@ -1,0 +1,23 @@
+<div id="meta_hide" ng-hide="true" ng-class="{'meta-holder':showMeta,'meta-holder-hide':!showMeta}" >
+
+	<!-- video poster -->
+	<div class="video-poster"><img width="720px" height="406" src="assets/media/images/{{vm.poster}}"></div>
+	
+	<!-- play button -->
+	<div class="play-button"><img src="{{vm.playButtonUrl}}"></div>
+	
+	<!-- text mask -->
+	<div 
+		ng-class="{'video-info-mask':collapseMeta,'video-info-mask-full':!collapseMeta}">
+	</div>
+	
+	<!-- meta info -->
+	<div class='meta' 
+		ng-class="{'video-info':collapseMeta,'video-info-full':!collapseMeta}"
+	>
+		<div class="vm.playmeta-title">{{vm.title}}</div> 
+		<div class="meta-text">{{vm.description}}</div> 
+		
+		
+	</div>	
+</div>

@@ -1,0 +1,46 @@
+<div id="acontece"><img src="assets/media/images/icon-happening.png"></div>
+<div class="video-holder"  ng-show="leitor2" >
+
+	<!-- video player -->
+	<div class="videogular-container" >
+		<div class="video-player stripes">
+		<videogular vg-theme=" vm.config.theme" vg-responsive="true"  vg-player-ready="vm.onPlayerReady($API)"  vg-complete="vm.onCompleteVideo()">
+				<vg-media 
+					vg-src="vm.config.sources"
+					vg-youtube="rel=1;showinfo=0">
+				</vg-media>
+	 
+				<vg-controls vg-autohide="true" vg-autohide-time="2000">
+					<vg-play-pause-button></vg-play-pause-button>
+					<vg-time-display>{{ currentTime | date:'mm:ss' }}</vg-time-display>
+					<vg-scrub-bar>
+						<vg-scrub-bar-current-time></vg-scrub-bar-current-time>
+						<!--<vg-cuepoints vg-cuepoints-config="vm.config.plugins.cuepoints"
+							 vg-cuepoints-theme="vm.config.plugins.cuepoints.theme.url">
+						</vg-cuepoints>-->
+					</vg-scrub-bar>
+					<vg-time-display>{{ timeLeft | date:'mm:ss' }}</vg-time-display>
+					<vg-volume>
+						<vg-mute-button></vg-mute-button>
+						<vg-volume-bar></vg-volume-bar>
+					</vg-volume>
+					<vg-fullscreen-button></vg-fullscreen-button>
+				</vg-controls>
+				
+				<vg-analytics vg-track-info="vm.analytics"></vg-analytics>
+
+			</videogular>
+		</div>
+	</div>
+	
+	<!-- meta information -->
+	<video-meta-info></video-meta-info>
+</div>
+
+<div class="video-holder" ng-show="leitor1">
+	<iframe src="http://rd.videos.sapo.cv/playhtml?file=http://rd.videos.sapo.cv/PjASrvJONwf2Efu9Op4W/mov/24&rel=1" frameborder="0" scrolling="no" width="100%" height="406" webkitallowfullscreen mozallowfullscreen allowfullscreen ></iframe>
+  </div>
+<div id="aside-content">
+	<div><img src="assets/media/images/icon-mostseen.png"></div>
+	<top-list></top-list> 
+</div>
