@@ -12,6 +12,7 @@ body {
 	padding:0;
 }
 
+
 table, tr, td{
 	border: 1px solid black;
 	border-collapse: collapse;
@@ -423,6 +424,14 @@ vg-tweet:hover {
     opacity: 0.5;
   }
  
+ .f-nav{ 
+ 	 z-index: 9999; 
+ 	 position: fixed; 
+ 	 left: 0; 
+ 	 top: 0; 
+ 	 width: 100%;
+ 	}
+
   @media screen and (max-width: 800px){
   	#main-content{
 	/* background-color:pink; */
@@ -607,7 +616,7 @@ font-size: 16px;
 	
 	font-size:110%;
 	color: #999999;
-      width: 100%
+    width: 100%;
 }
 #main-menu  ul {
 	padding:0px;
