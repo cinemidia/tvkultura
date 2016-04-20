@@ -19,7 +19,7 @@ jQuery(document).ready(function() {
        
      var nav = $('.Navbar');    
       $(window).scroll(function () {
-        if ($(this).scrollTop() > 136) {
+        if ($(this).scrollTop() > 136 && $(window).width() < 783) {
             nav.addClass("f-nav");
          } else {
             nav.removeClass("f-nav");
