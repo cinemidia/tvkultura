@@ -284,7 +284,8 @@ table, tr, td{
 
 #footer{
 	color:black;
-	width:100%;
+	width:80%;
+	
 	height:100px;
 	margin:0px auto;
 	padding-left: 5px;
@@ -807,6 +808,11 @@ font-size: 20px;
  #footer-section #admin {
     display: none;	
  }
+ #footer-section{
+	width:50%;
+	float:left;	
+	height: auto;
+}
 }
   @media screen and (max-width: 700px){
   	 #main-content{
@@ -845,6 +851,14 @@ font-size: 20px;
 	font-weight:bold;
 }
 .most-seen-text:hover{
+	cursor: pointer;
+}
+#footer-section{
+	width:50%;
+	float:left;	
+	height: auto;
+}
+#footer-section img{
 	cursor: pointer;
 }
 }
