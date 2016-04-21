@@ -27,35 +27,8 @@
 			<div id="logomc"><a ui-sref="home"><img src="assets/media/images/tvkultura.png"></a></div>
 		</div>
 		<div class="right-wing">
-		<div id="logout" style="padding-top: 15px">
-			 <a ng-show="ver_logout" ui-sref="login({action:'logout'})" style="text-decoration: none"> :Logout</a>
-		 <span ng-show="ver_logout" >{{userLogged}}</span>
-		</div>		 
-		
 		<div class="social-share">
-			<!--<span class="button" >contact</span>-->
-			<div class="button" 
-				socialshare 
-				socialshare-provider="facebook" 
-				socialshare-media="assets/media/images/icona/facebook.png"
-				socialshare-type="sharer"
-				socialshare-text="TV Kultura"
-				socialshare-url="www.tvkultura.cv"
-				socialshare-popup-height="300"
-				socialshare-popup-width="400"
-				socialshare-trigger="click"> <img src="assets/media/images/icons/facebook.png" title="Partilha no Facebook">
-			</div>
-			<div class="button" 
-				socialshare
-				socialshare-provider="twitter"
-				socialshare-hashtags="urbanism, development, social, webdoc"
-				socialshare-via="twitter"
-				socialshare-text="TV Kultura"
-				socialshare-url="www.tvkultura.cv"
-				socialshare-popup-height="300"
-				socialshare-popup-width="400"
-				socialshare-trigger="click"><img src="assets/media/images/icons/twitter.png" title="Partilha no Twitter">				
-			</div>
+			<!--<span class="button" >contact</span>-->			
 			<div ng-show="live_ico"><img src="assets/media/images/live.gif" ui-sref="live">
 			</div>
 			<p style="padding-right: 5px" ng-show="live_text" class="aviso">{{aviso_texto}}</p>
@@ -68,7 +41,7 @@
          <div id="o" class="Navbar">
            <div id="menu-top">
            <div id="brand"><a ui-sref="home"><img width="100%" height="100%" src="assets/media/images/tvkultura.png"></a></div>
-		   <button id='btn_menu' ><img src="assets/media/images/menu.png"></button>	         
+		   <div id='menu_txt'>menu</div>	         
 		  </div>
          <main-menu></main-menu> 
         </div>
@@ -80,7 +53,7 @@
 	<div id="main-content" ui-view="body"></div> 
 </div> 
 
-<!--<div id="footer-wrapper" ng-hide="true">
+<div id="footer-wrapper" >
 	<div id="footer" >
 		<div id="footer-section">
 			<div class="title">:PARCEIROS</div>
@@ -89,28 +62,42 @@
 		</div>
 		<div id="footer-section">
 			<div class="title">:REDES SOCIAIS</div>
-			<div class="social"><img src="assets/media/images/facebook.png">/tvcultura</div>
-			<div class="social"><img src="assets/media/images/youtube.png">/tvcultura</div>
+			<div style="margin-bottom: 2px" 
+				socialshare 
+				socialshare-provider="facebook" 
+				socialshare-media="assets/media/images/icona/facebook.png"
+				socialshare-type="sharer"
+				socialshare-text="TV Kultura"
+				socialshare-url="www.tvkultura.cv"
+				socialshare-popup-height="300"
+				socialshare-popup-width="400"
+				socialshare-trigger="click"> <img src="assets/media/images/icons/facebook.png" title="Partilha no Facebook"> Facebook
+			</div>
+			<div class="button" 
+				socialshare
+				socialshare-provider="twitter"
+				socialshare-hashtags="urbanism, development, social, webdoc"
+				socialshare-via="twitter"
+				socialshare-text="TV Kultura"
+				socialshare-url="www.tvkultura.cv"
+				socialshare-popup-height="300"
+				socialshare-popup-width="400"
+				socialshare-trigger="click"><img src="assets/media/images/icons/twitter.png" title="Partilha no Twitter"> Twitter			
+			</div>
 		</div>
 		<div id="footer-section">
-			<div class="title">:equipa</div>
-			<ul>
-				<li>Direção:</li>
-				<li>Conteúdos:</li>
-				<li>Câmara e Iluminação:</li>
-				<li>Edição:</li>
-				<li>Webmaster:</li>
-			</ul>
-			<br>
 			<div id="admin">
-			<a href="#/videos" ng-show="ver_admin">:ADMIN</a>
+             <a  ui-sref="login" ng-show="lg">:ADMIN</a>
+	         <a  ui-sref="videos" ng-show="ad">:ADMIN</a> 
 
-			 <a ng-show="ver_logout" ui-sref="login({action:'logout'})">{{userLogged}}:LOGOUT</a>		    
-		    </div>
+	         <span ng-show="ver_logout" >| Logado {{userLogged}}</span>
+			 <a ng-show="ver_logout" ui-sref="login({action:'logout'})" style="text-decoration: none"> ::Logout</a>			    
+		    </div>		   	 
+		
 		</div>
 	</div>
 	
-  </div>-->
+  </div>
  <footer id="footer-notes">
 	<div>copyleft: Ministério da Cultura de Cabo Verde</div>
 </footer>

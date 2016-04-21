@@ -1,6 +1,6 @@
 jQuery(document).ready(function() {
 	   
-  	$("body").on('click', '#btn_menu', function(event) {
+  	$("body").on('click', '#menu_txt', function(event) {
       event.preventDefault();
       $("nav").slideToggle();
      
