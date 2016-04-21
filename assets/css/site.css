@@ -880,7 +880,7 @@ font-size: 20px;
 .most-seen-image {
  float:center;
  width:15%;
- height: 60px;
+ height: auto;
 }
 .most-seen-text {
  float:right;
@@ -908,7 +908,7 @@ font-size: 20px;
    .s_cat_img{
 	float:center;
     width:15%;
-    height: 60px;
+    height: auto;
     padding: 5px;
 }
  .s_cat_img img {
@@ -971,7 +971,7 @@ font-size: 20px;
       .most-seen-image {
 	  float:center;
 	  width:20%;
-	  height: 60px;
+	  height: auto;
 
 }
       .most-seen-text {
@@ -1000,7 +1000,7 @@ font-size: 20px;
    .s_cat_img{
 	float:center;
     width:15%;
-    height: 60px;
+    height: auto;
     padding: 5px;
 }
  .s_cat_img img {
