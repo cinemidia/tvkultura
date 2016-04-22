@@ -16,6 +16,13 @@ jQuery(document).ready(function() {
         }
      });
 
+       $('body').on('click', '#main-menu ul li', function(event) {
+           if($(window).width() < 783){
+              $('nav').hide();
+              }
+           });
+   
+
        
      var nav = $('.Navbar');    
       $(window).scroll(function () {

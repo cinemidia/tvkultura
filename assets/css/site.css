@@ -132,7 +132,7 @@ table, tr, td{
 
 #menu_txt{  
   float: right;
-  margin-top: 6px;
+  margin-top: 7px;
   margin-right: 10px;  
   display: none;
   color: #FFFFFF;
@@ -176,7 +176,7 @@ table, tr, td{
 #aside-content{
 	/* background-color:white; */
 	width:100%;
-	padding-left: 60px;
+	padding-left: 90px;
 	
 }
 
@@ -241,6 +241,10 @@ table, tr, td{
 	width: 40%;
 	height: auto;
 }
+.single_category:hover{
+	cursor: pointer;
+}
+
 .s_cat_img{
 	float:left;
 	width:40%;
@@ -598,13 +602,18 @@ vg-tweet:hover {
       #aside-content{
 	/* background-color:white; */
 	width:100%;
-	padding: 4px;
+	padding: 5px;
 	
 }
     #most-seen{
 	/* background-color:white; */
 	float:center;
 	width:100%;
+	padding-left: 7px;
+}
+
+#cat_Titulo{
+	padding-left: 7px;
 }
 .most-seen{
 	font-size:90%;
@@ -790,16 +799,7 @@ font-size: 20px;
 }
 #main-menu ul li a:hover {
 	color: orange;
-}
-
-#main-content{
-	/* background-color:pink; */
-	padding: 0 0 40px;
-	width:900px;
-	/*min-width:900px;
-	max-width:900px;*/
-	margin: auto;
-}   
+}  
       
    nav{
    	display: none;
@@ -887,7 +887,7 @@ font-size: 20px;
 .most-seen img {
  width:100%;
  height: 100%;
- padding: 1px 0 0px 0;   
+ padding: 0px 0 0px 0;   
  }
 
 .most-seen-image {
@@ -899,7 +899,7 @@ font-size: 20px;
  float:right;
  width:85%;
  height:auto; 
- font-size: 16px;
+ font-size: 14px;
  color: white;
  padding-left: 5px;
 }
@@ -922,7 +922,6 @@ font-size: 20px;
 	float:center;
     width:15%;
     height: auto;
-    padding: 5px;
 }
  .s_cat_img img {
         width:100%;
@@ -933,7 +932,7 @@ font-size: 20px;
 	float:right;
  	width:85%;
  	height:auto; 
- 	font-size: 16px;
+ 	font-size: 14px;
  	color: white;
 	padding-left: 5px;
 }
@@ -991,7 +990,7 @@ font-size: 20px;
 	  float:right;
 	  width:80%;
       height:auto; 
-      font-size: 16px;
+      font-size: 14px;
       color: white;
       padding-left: 5px;
 }
@@ -1014,7 +1013,6 @@ font-size: 20px;
 	float:center;
     width:15%;
     height: auto;
-    padding: 5px;
 }
  .s_cat_img img {
         width:100%;
@@ -1025,7 +1023,7 @@ font-size: 20px;
 	float:right;
  	width:85%;
  	height:auto; 
- 	font-size: 16px;
+ 	font-size: 14px;
  	color: white;
 	padding-left: 5px;
 }
