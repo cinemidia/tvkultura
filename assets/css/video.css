@@ -129,8 +129,11 @@
    }
 
    #acontece{
-  	padding-left: 5px;
-  	
+  	padding-left: 10px;
+  }
+  #acontece img{
+  	width: 110px;
+  	height: auto; 
   } 
 }
 

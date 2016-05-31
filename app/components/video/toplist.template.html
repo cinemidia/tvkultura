@@ -1,9 +1,11 @@
 <div id="most-seen">
-	<div ng-repeat="video in vm.videoList | limitTo:12 | orderBy:'-viewCount'"
+	<div ng-repeat="video in vm.videoList | limitTo:10 | orderBy:'-viewCount'"
 	 ng-if="video.categoria!='live'" class="most-seen">
 		
-		<div class="most-seen-image" ng-click="vm.setVideo($index) ">
-			<img width="130" height="77.8px" src="assets/media/images/{{video.low}}">
+		<div class="most-seen-image" ng-click="vm.setVideo($index)" 
+		    ng-style="{'background':'url(./assets/media/images/{{video.low}}) no-repeat','background-size':' cover'}">
+			
+			<img id="play" width="100%" height="77.8px" src="assets/media/images/p.png">
 		</div>
 		
 		<div class="most-seen-text" ng-click="vm.setVideo($index)">

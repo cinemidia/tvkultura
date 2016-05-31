@@ -1,10 +1,17 @@
 (function() { 'use strict';
 
 	angular.module('app')
-	.directive('mainMenu', MainMenu);
-	MainMenu.$inject = ['ngDialog'];
-	
-	function MainMenu(ngDialog)
+	.directive('mainMenu', MainMenu);	
+
+	  /** Esta funcão sera chamada automaticamente 
+	    * assim que a diretiva mainMenu é executada no HTML.
+        * @name MainMenu
+        * @function
+        */
+      /** 
+       * @param {MainMenu} 
+      */
+	function MainMenu()
 	{
 		return {
 		  restrict: 'E',
