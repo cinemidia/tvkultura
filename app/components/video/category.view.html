@@ -2,8 +2,9 @@
 <div id="most-seen">
 	<div ng-repeat="video in vm.videoList" class="single_category">
 		
-		<div class="s_cat_img" ui-sref="video({action:'{{video.videoId}}'})">
-			<img width="95%" height="77.8px" src="assets/media/images/{{video.medium}}">
+		<div class="s_cat_img" ui-sref="video({action:'{{video.videoId}}'})" ng-style="{'background':'url(./assets/media/images/{{video.medium}}) no-repeat','background-size':' cover'}">
+			
+			<img id="play" width="100%" height="77.8px" src="assets/media/images/p.png">
 		</div>
 		
 		<div class="s_cat_text" ui-sref="video({action:'{{video.videoId}}'})">

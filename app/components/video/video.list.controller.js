@@ -115,35 +115,35 @@
 			$location.path('/lg/').search({action: 'admin'});
 		}
 
-       	dataService.getData('app/components/video/getvideos.php')
+       	dataService.getData('app/components/video/server_code/getvideos.php')
         .then(function(data) 
 		{				
 			vm.videos = data;									
 					
 			//var j = JSON.stringify(data);
 			//alert(j);
-			getTransmissao();
-			live();
+			
 		},
 		function (error) {
 			// handle errors here
 			alert(error.statusText);
 		});
       
-         function  live_op(valor){
+         //funcao que lida com muitos emissocao de liveStream 
+     /*    function  live_op(valor){
          	var id;
-         	for (var i =0; i < vm.videos.length ; i++){
+         	 for (var i =0; i < vm.videos.length ; i++){
 	          if(vm.videos[i].low =='tvkultura.png'){
 				id= vm.videos[i].video_id;
 	          }
-	       }        	
+	         }        	
 
          	  var form_data = new FormData();               
               form_data.append('opcao', valor); 
               form_data.append('video_id', id); 
 
               $.ajax({
-			   url :'app/components/video/live_op.php',
+			   url :'app/components/video/server_code/live_op.php',
 			   type : 'post',						
 			   data : form_data,
 			   cache:false,
@@ -154,9 +154,52 @@
 				}
 			});
 			return false;
-         };
+         };*/
+       function  live_op(valor){    
+       	 var form_data = new FormData();               
+         form_data.append('op_data', valor);  
+       	 
+       	  $.ajax({
+			   url :'app/components/video/server_code/opcao_transmisao.php',
+			   type : 'post',						
+			   data : form_data,
+			   cache:false,
+		       contentType: false,
+		       processData: false,				         
+			   success : function( response) {
+			   alert( response );	
+				}
+			});
+			return false;
+         }; 
 
-      function live(){
+      function radio_op(op){     
+         switch(op){
+			       case 1:
+			        $rootScope.ckS=true;		       			      
+			        break;
+			        case 0:
+			        $rootScope.ckN=true;
+			        break; 
+			         }
+      	
+     };
+     (function live(){
+	   $.ajax({
+			   url :'app/components/video/server_code/opcao_transmisao.php',
+			   type : 'get',	
+			   dataType: 'json',					
+			   cache:false,				         
+			   success : function( response) {				   	    
+			         data = $.parseJSON(response);
+			         var ops = parseInt(data.opcao);			        
+                     radio_op(ops);       
+              		}
+			});
+			return false;
+		})();	
+     //funcao de atribui valor ao radiobuton
+     /* function live(){
         for (var i =0; i < vm.videos.length ; i++){
 	          if(vm.videos[i].low =='tvkultura.png'){
 	            var op = vm.videos[i].logline;
@@ -176,7 +219,8 @@
 			         }
              }
          }
-	}
+	}*/
+
 	    function checkIt(){
 	      var check = $('#alt_img').is(':checked');
 	      return check;
@@ -192,6 +236,7 @@
 
         function uploadThumbnails(){
         	 var id = $('#v_id').val();
+        	 // var id = $('#v_idH').val();
         	 var file_data1 = $('#img_low').prop('files')[0];   
         	 var file_data2 = $('#img_medium').prop('files')[0];         	   
         	 var file_data3 = $('#img_high').prop('files')[0];   
@@ -205,7 +250,7 @@
               form_data.append('file4', file_data4); 
 
               $.ajax({
-			   url :'app/components/video/uploadThumbnails.php',
+			   url :'app/components/video/server_code/uploadThumbnails.php',
 			   type : 'post',						
 			   data : form_data,
 			   cache:false,
@@ -220,12 +265,12 @@
 
          function postTransmissao(){
          	 var trans = $('#data_trans').val();       	        
-             
+
               var form_data = new FormData();  
               form_data.append('trasmi_data',trans);    
              
               $.ajax({
-			   url :'app/components/video/pushJsonData.php',
+			   url :'app/components/video/server_code/pushJsonData.php',
 			   type : 'post',						
 			   data : form_data,
 			   cache:false,
@@ -240,28 +285,30 @@
 
          function postTransmissaoInfo(){
          	 var trans = $('#texto_info').val();      	        
-             
+              if(!trans){
+                 	trans="sEm_1nF0";
+                 }
               var form_data = new FormData();  
               form_data.append('trasmi_data',trans);    
              
               $.ajax({
-			   url :'app/components/video/pushJsonData.php',
+			   url :'app/components/video/server_code/pushJsonData.php',
 			   type : 'post',						
 			   data : form_data,
 			   cache:false,
 		       contentType: false,
 		       processData: false,				         
-			   success : function( response) {				
-					alert(response);
+			   success : function( response) {			
+					
 				}
 			});
 			return false;
          }
 
-         function getTransmissao(){         	   
+         (function getTransmissao(){         	   
              
               $.ajax({
-			   url :'app/components/video/pullJsonData.php',
+			   url :'app/components/video/server_code/pullJsonData.php',
 			   type : 'get',						
 			   cache:false,				         
 			   success : function( response) {			
@@ -269,7 +316,7 @@
 				}
 			});
 			return false;
-         }
+         })();
 
 
         //edit video 
@@ -283,7 +330,7 @@
 		        postData= videosService.editVideo(action, index,vm.selectVideo,checkIt());		    			    	
 		    }	
              			
-			dataService.postData('app/components/video/editvideo.php',postData)
+			dataService.postData('app/components/video/server_code/editvideo.php',postData)
 			.success(function(data)
 			{
 				vm.dbStatus = true;

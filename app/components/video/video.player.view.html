@@ -1,16 +1,16 @@
 <div id="acontece"><img src="assets/media/images/icon-happening.png"></div>
-<div class="video-holder"  ng-show="leitor2" >
-
+<div class="video-holder">
+<!-- <div class="video-holder"  ng-show="leitor2" > -->
 	<!-- video player -->
 	<div class="videogular-container" >
 		<div class="video-player stripes">
-		<videogular vg-theme=" vm.config.theme" vg-responsive="true"  vg-player-ready="vm.onPlayerReady($API)"  vg-complete="vm.onCompleteVideo()">
+		<videogular vg-theme=" vm.config.theme" vg-player-ready="vm.onPlayerReady($API)"  vg-complete="vm.onCompleteVideo()" vg-native-fullscreen="false">
 				<vg-media 
 					vg-src="vm.config.sources"
-					vg-youtube="rel=1;showinfo=0">
+					vg-youtube="rel=0;showinfo=0">
 				</vg-media>
 	 
-				<vg-controls vg-autohide="true" vg-autohide-time="2000">
+			<vg-controls vg-autohide="true" vg-autohide-time="2000">
 					<vg-play-pause-button></vg-play-pause-button>
 					<vg-time-display>{{ currentTime | date:'mm:ss' }}</vg-time-display>
 					<vg-scrub-bar>
@@ -23,12 +23,13 @@
 					<vg-volume>
 						<vg-mute-button></vg-mute-button>
 						<vg-volume-bar></vg-volume-bar>
-					</vg-volume>
+					</vg-volume>	
+						<!--<vg-playback-button></vg-playback-button>-->		
 					<vg-fullscreen-button></vg-fullscreen-button>
 				</vg-controls>
-				
-				<vg-analytics vg-track-info="vm.analytics"></vg-analytics>
-
+				<vg-overlay-play></vg-overlay-play>
+				<!-- <vg-analytics vg-track-info="vm.analytics"></vg-analytics>-->
+              <vg-poster vg-url='vm.config.plugins.poster'></vg-poster>
 			</videogular>
 		</div>
 	</div>
@@ -37,10 +38,10 @@
 	<video-meta-info></video-meta-info>
 </div>
 
-<div class="video-holder" ng-show="leitor1">
+<!--<div class="video-holder" ng-show="leitor1">
 	<iframe src="http://rd.videos.sapo.cv/playhtml?file=http://rd.videos.sapo.cv/PjASrvJONwf2Efu9Op4W/mov/24&rel=1" frameborder="0" scrolling="no" width="100%" height="100%" webkitallowfullscreen mozallowfullscreen allowfullscreen ></iframe>
-  </div>
+  </div>-->
 <div id="aside-content">
-	<div><img src="assets/media/images/icon-mostseen.png"></div>
+	<div id="ms_Titulo"><img src="assets/media/images/icon-mostseen.png"></div>
 	<top-list></top-list> 
 </div>
